@@ -1,6 +1,6 @@
 {
   "name": "@opendocsg/pdf2md",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A PDF to Markdown Converter",
   "main": "dist/pdf2md.js",
   "bin": {
