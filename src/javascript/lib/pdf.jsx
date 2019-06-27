@@ -30,22 +30,14 @@ export async function parse(docOptions, callbacks) {
 
   for (let j = 1; j <= pdfDocument.numPages; j++) {
     const page = await pdfDocument.getPage(j)
+
+    // Trigger the font retrieval for the page
+    await page.getOperatorList()
+
     const scale = 1.0
     const viewport = page.getViewport(scale)
     const textContent = await page.getTextContent()
     const textItems = textContent.items.map(item => {
-      const fontId = item.fontName
-
-      if (!fonts.ids.has(fontId) && fontId.startsWith('g_d0')) {
-        pdfDocument.transport.commonObjs.get(fontId, font => {
-          if (!fonts.ids.has(fontId)) {
-            fonts.ids.add(fontId)
-            fonts.map.set(fontId, font)
-            fontParsed(fonts)
-          }
-        })
-      }
-
       const tx = pdfjs.Util.transform(
         viewport.transform,
         item.transform
@@ -59,14 +51,23 @@ export async function parse(docOptions, callbacks) {
           width: Math.round(item.width),
           height: Math.round(dividedHeight <= 1 ? item.height : dividedHeight),
           text: item.str,
-          font: fontId,
+          font: item.fontName,
       })
     })
     pages[page.pageIndex].items = textItems
     pageParsed(pages)
 
-    // Trigger the font retrieval for the page
-    page.getOperatorList()
+    const fontIds = new Set(textItems.map(t => t.font))
+    for (const fontId of fontIds) {
+      if (!fonts.ids.has(fontId) && fontId.startsWith('g_d')) {
+        const font = await new Promise(
+          resolve => pdfDocument.transport.commonObjs.get(fontId, resolve)
+        )
+        fonts.ids.add(fontId)
+        fonts.map.set(fontId, font)
+        fontParsed(fonts)
+      }
+    }
   }
   return {
     fonts,
