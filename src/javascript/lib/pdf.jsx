@@ -60,8 +60,11 @@ export async function parse(docOptions, callbacks) {
     const fontIds = new Set(textItems.map(t => t.font))
     for (const fontId of fontIds) {
       if (!fonts.ids.has(fontId) && fontId.startsWith('g_d')) {
+        // Depending on which build of pdfjs-dist is used, the
+        // WorkerTransport containing the font objects is either transport or _transport
+        const transport = pdfDocument.transport || pdfDocument._transport // eslint-disable-line no-underscore-dangle
         const font = await new Promise(
-          resolve => pdfDocument.transport.commonObjs.get(fontId, resolve)
+          resolve => transport.commonObjs.get(fontId, resolve)
         )
         fonts.ids.add(fontId)
         fonts.map.set(fontId, font)
