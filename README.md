@@ -33,7 +33,7 @@ $ node dist/pdf2md-cli.js --inputFolderPath=[your input folder path] --outputFol
 </pre>
 If you are converting recursively on a large number of files you might encounter the error "Allocation failed - JavaScript heap out of memory”. Instead, run the command
 <pre>
-$ node --max-old-space-size=4096 index.js --inputFolderPath=[your input folder path] --outputFolderPath=[your output folder path] --recursive=[1 or 0]
+$ node dist/pdf2md-cli.js --max-old-space-size=4096 --inputFolderPath=[your input folder path] --outputFolderPath=[your output folder path] --recursive=[1 or 0]
 </pre>
 
 Options:
