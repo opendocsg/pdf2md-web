@@ -11,7 +11,7 @@
     "build": "NODE_ENV=browser webpack",
     "start": "NODE_ENV=browser webpack-dev-server",
     "lint": "eslint src --ext .js --ext .jsx --cache",
-    "test": "NODE_ENV=testing mocha --compilers js:@babel/register test --recursive",
+    "test": "NODE_ENV=cli mocha --compilers js:@babel/register test --recursive",
     "check": "npm run lint && npm run test",
     "release": "npm run lint && rm -rf build/* && NODE_ENV=production webpack -p",
     "deploy": "npm run release && cp -r build/* docs/",
@@ -35,6 +35,7 @@
     "bootstrap": "^3.3.7",
     "enumify": "^1.0.4",
     "file-saver": "^2.0.2",
+    "mock-fs": "^4.10.1",
     "pdfjs-dist": "^2.0.489",
     "rc-progress": "^2.0.6",
     "react": "^15.4.2",
@@ -43,7 +44,8 @@
     "react-dropzone": "^3.9.2",
     "react-icons": "^2.2.3",
     "react-overlays": "^0.6.12",
-    "remarkable": "^1.7.1"
+    "remarkable": "^1.7.1",
+    "rewire": "^4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

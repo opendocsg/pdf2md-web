@@ -29,17 +29,17 @@ Instructions to run:
 <pre>
 $ cd [project_folder]
 $ npm run prepare
-$ node dist/pdf2md-cli.js --inputFolderPath=[your input folder path] --outputFolderPath=[your output folder path] --recursive=[true or false]
+$ node dist/pdf2md-cli.js --inputFolderPath=[your input folder path] --outputFolderPath=[your output folder path] --recursive
 </pre>
 If you are converting recursively on a large number of files you might encounter the error "Allocation failed - JavaScript heap out of memory”. Instead, run the command
 <pre>
-$ node dist/pdf2md-cli.js --max-old-space-size=4096 --inputFolderPath=[your input folder path] --outputFolderPath=[your output folder path] --recursive=[1 or 0]
+$ node dist/pdf2md-cli.js --max-old-space-size=4096 --inputFolderPath=[your input folder path] --outputFolderPath=[your output folder path] --recursive
 </pre>
 
 Options:
 1. Input folder path (should exist)
 2. Output folder path (should exist)
-3. Recursive - convert all PDFs for folders within folders
+3. Recursive - convert all PDFs for folders within folders. Specify the tag if you require recursive, and omit if you don't
 
 #### Release
 - Increase version in package.json
