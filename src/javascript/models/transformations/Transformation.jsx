@@ -14,14 +14,6 @@ export default class Transformation {
         this.itemType = itemType;
     }
 
-    showModificationCheckbox() {
-        return false;
-    }
-
-    createPageView(page, modificationsOnly) { // eslint-disable-line no-unused-vars
-        throw new TypeError("Do not call abstract method foo from child.");
-    }
-
     // Transform an incoming ParseResult into an outgoing ParseResult
     transform(parseResult: ParseResult) { // eslint-disable-line no-unused-vars
         throw new TypeError("Do not call abstract method foo from child.");
