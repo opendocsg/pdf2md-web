@@ -22,6 +22,7 @@ import ToMarkdown from '../../models/transformations/ToMarkdown.jsx'
 import TextPageView from './TextPageView.jsx'
 import ToTextBlocks from '../../models/transformations/ToTextBlocks.jsx'
 
+export const showModificationCheckbox = name => name !== ToMarkdown.name && name !== ToTextBlocks.name
 export const transformationToPageView = {}
 
 function textItem (page, modificationsOnly) {
