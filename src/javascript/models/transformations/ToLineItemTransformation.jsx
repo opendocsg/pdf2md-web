@@ -1,8 +1,6 @@
-import React from 'react';
 import Transformation from './Transformation.jsx';
 import ParseResult from '../ParseResult.jsx';
 import LineItem from '../LineItem.jsx';
-import LineItemPageView from '../../components/debug/LineItemPageView.jsx';
 import { REMOVED_ANNOTATION } from '../Annotation.jsx';
 
 // Abstract class for transformations producing LineItem(s) to be shown in the LineItemPageView
@@ -13,19 +11,6 @@ export default class ToLineItemTransformation extends Transformation {
         if (this.constructor === ToLineItemTransformation) {
             throw new TypeError("Can not construct abstract class.");
         }
-        this.showWhitespaces = false;
-    }
-
-    showModificationCheckbox() {
-        return true;
-    }
-
-    createPageView(page, modificationsOnly) {
-        return <LineItemPageView
-                                 key={ page.index }
-                                 page={ page }
-                                 modificationsOnly={ modificationsOnly }
-                                 showWhitespaces={ this.showWhitespaces } />;
     }
 
     completeTransform(parseResult:ParseResult) {

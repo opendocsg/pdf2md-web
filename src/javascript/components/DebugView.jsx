@@ -14,6 +14,10 @@ import AutoAffix from 'react-overlays/lib/AutoAffix';
 
 import ParseResult from '../models/ParseResult.jsx';
 
+import { transformationToPageView, showModificationCheckbox } from './debug/index.jsx'
+
+const showCheckbox = showModificationCheckbox
+
 // A view which displays the content of the given pages transformed by the given transformations
 export default class DebugView extends React.Component {
 
@@ -89,8 +93,8 @@ export default class DebugView extends React.Component {
         }
 
         parseResult.pages = parseResult.pages.filter((elem, i) => pageNr == -1 || i == pageNr);
-        const pageComponents = parseResult.pages.map(page => lastTransformation.createPageView(page, this.state.modificationsOnly));
-        const showModificationCheckbox = lastTransformation.showModificationCheckbox();
+        const pageComponents = parseResult.pages.map(page => transformationToPageView[lastTransformation.constructor.name](page, this.state.modificationsOnly));
+        const showModificationCheckbox = showCheckbox(lastTransformation.constructor.name);
         const statisticsAsList = Object.keys(parseResult.globals).map((key, i) => {
             return <li key={ i }>
                      { key + ': ' + JSON.stringify(parseResult.globals[key]) }

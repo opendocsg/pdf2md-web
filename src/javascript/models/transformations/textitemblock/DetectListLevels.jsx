@@ -9,7 +9,6 @@ export default class DetectListLevels extends ToLineItemBlockTransformation {
 
     constructor() {
         super("Level Lists");
-        this.showWhitespaces = true;
     }
 
     transform(parseResult:ParseResult) {
