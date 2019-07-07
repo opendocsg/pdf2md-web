@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 const mock = require('mock-fs')
 const rewire = require('rewire')
-const pdf2mdCli = rewire('../src/javascript/pdf2md-cli.js')
+const pdf2mdCli = rewire('../lib/pdf2md-cli.js')
 const getFileAndFolderPaths = pdf2mdCli.__get__('getFileAndFolderPaths')
 const getAllFileAndFolderPaths = pdf2mdCli.__get__('getAllFileAndFolderPaths')
 

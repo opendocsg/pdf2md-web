@@ -6,8 +6,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = 'bundle.worker.js';
 
 import { Line } from 'rc-progress';
 
-import Metadata from '../models/Metadata.jsx';
-import { parse } from '../lib/pdf.jsx'
+import Metadata from '../../../lib/models/Metadata.jsx';
+import { parse } from '../../../lib/util/pdf.jsx'
 
 
 // Parses the PDF pages and displays progress

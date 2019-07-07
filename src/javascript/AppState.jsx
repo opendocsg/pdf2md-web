@@ -1,5 +1,5 @@
 import { Enum } from 'enumify';
-import { makeTransformations } from '../lib/transformations.jsx';
+import { makeTransformations } from '../../lib/util/transformations.jsx';
 
 // Holds the state of the Application
 export default class AppState {

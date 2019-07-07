@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
-import HeadlineFinder from '../src/javascript/models/HeadlineFinder';
-import LineItem from '../src/javascript/models/LineItem.jsx';
+import HeadlineFinder from '../../lib/models/HeadlineFinder.jsx';
+import LineItem from '../../lib/models/LineItem.jsx';
 
 describe('HeadlineFinder', () => {
 

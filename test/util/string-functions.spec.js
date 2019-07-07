@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { hasUpperCaseCharacterInMiddleOfWord, normalizedCharCodeArray, removeLeadingWhitespaces, removeTrailingWhitespaces, prefixAfterWhitespace, suffixBeforeWhitespace, charCodeArray, isListItem, isNumberedListItem, wordMatch } from '../src/javascript/lib/stringFunctions.jsx'
+import { hasUpperCaseCharacterInMiddleOfWord, normalizedCharCodeArray, removeLeadingWhitespaces, removeTrailingWhitespaces, prefixAfterWhitespace, suffixBeforeWhitespace, charCodeArray, isListItem, isNumberedListItem, wordMatch } from '../../lib/util/string-functions.jsx'
 
 describe('functions: hasUpperCaseCharacterInMiddleOfWord', () => {
 

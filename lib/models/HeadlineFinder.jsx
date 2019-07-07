@@ -1,4 +1,4 @@
-import { normalizedCharCodeArray } from '../lib/stringFunctions.jsx'
+import { normalizedCharCodeArray } from '../util/string-functions.jsx'
 
 export default class HeadlineFinder {
 

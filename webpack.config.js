@@ -29,7 +29,7 @@ module.exports = {
                 // Ask webpack to check: If this file ends with .js, then apply some transforms
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                include: [JAVASCRIPT_DIR],
+                include: [JAVASCRIPT_DIR, path.resolve(__dirname, 'lib')],
             },
             {
                 test: /\.css$/,
