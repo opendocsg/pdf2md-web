@@ -4,7 +4,7 @@ import Grid from 'react-bootstrap/lib/Grid'
 
 import TopBar from './TopBar.jsx';
 import FooterBar from './FooterBar.jsx'
-import { View } from '../models/AppState.jsx';
+import { View } from '../AppState.jsx';
 import UploadView from './UploadView.jsx';
 import LoadingView from './LoadingView.jsx';
 import ResultView from './ResultView.jsx';

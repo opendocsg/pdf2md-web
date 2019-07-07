@@ -1,5 +1,5 @@
 import TextItem from './TextItem.jsx';
-import { sortByX } from '../lib/pageItemFunctions.jsx'
+import { sortByX } from '../util/page-item-functions.jsx'
 
 //Groups all text items which are on the same y line
 export default class TextItemLineGrouper {

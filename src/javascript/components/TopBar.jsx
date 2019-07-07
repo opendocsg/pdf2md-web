@@ -9,7 +9,7 @@ import Popover from 'react-bootstrap/lib/Popover'
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger'
 
 import AppLogo from './AppLogo.jsx';
-import { View } from '../models/AppState.jsx';
+import { View } from '../AppState.jsx';
 
 export default class TopBar extends React.Component {
 

@@ -1,26 +1,26 @@
 import React from 'react'
 
 import TextItemPageView from './TextItemPageView.jsx'
-import CalculateGlobalStats from '../../models/transformations/textitem/CalculateGlobalStats.jsx'
+import CalculateGlobalStats from '../../../../lib/models/transformations/text-item/CalculateGlobalStats.jsx'
 
 import LineItemPageView from './LineItemPageView.jsx'
-import CompactLines from '../../models/transformations/lineitem/CompactLines.jsx'
-import RemoveRepetitiveElements from '../../models/transformations/lineitem/RemoveRepetitiveElements.jsx'
-import VerticalToHorizontal from '../../models/transformations/lineitem/VerticalToHorizontal.jsx'
-import DetectTOC from '../../models/transformations/lineitem/DetectTOC.jsx'
-import DetectListItems from '../../models/transformations/lineitem/DetectListItems.jsx'
-import DetectHeaders from '../../models/transformations/lineitem/DetectHeaders.jsx'
+import CompactLines from '../../../../lib/models/transformations/line-item/CompactLines.jsx'
+import RemoveRepetitiveElements from '../../../../lib/models/transformations/line-item/RemoveRepetitiveElements.jsx'
+import VerticalToHorizontal from '../../../../lib/models/transformations/line-item/VerticalToHorizontal.jsx'
+import DetectTOC from '../../../../lib/models/transformations/line-item/DetectTOC.jsx'
+import DetectListItems from '../../../../lib/models/transformations/line-item/DetectListItems.jsx'
+import DetectHeaders from '../../../../lib/models/transformations/line-item/DetectHeaders.jsx'
 
 import LineItemBlockPageView from './LineItemBlockPageView.jsx'
-import GatherBlocks from '../../models/transformations/textitemblock/GatherBlocks.jsx'
-import DetectCodeQuoteBlocks from '../../models/transformations/textitemblock/DetectCodeQuoteBlocks.jsx'
-import DetectListLevels from '../../models/transformations/textitemblock/DetectListLevels.jsx'
+import GatherBlocks from '../../../../lib/models/transformations/line-item-block/GatherBlocks.jsx'
+import DetectCodeQuoteBlocks from '../../../../lib/models/transformations/line-item-block/DetectCodeQuoteBlocks.jsx'
+import DetectListLevels from '../../../../lib/models/transformations/line-item-block/DetectListLevels.jsx'
 
 import MarkdownPageView from './MarkdownPageView.jsx'
-import ToMarkdown from '../../models/transformations/ToMarkdown.jsx'
+import ToMarkdown from '../../../../lib/models/transformations/ToMarkdown.jsx'
 
 import TextPageView from './TextPageView.jsx'
-import ToTextBlocks from '../../models/transformations/ToTextBlocks.jsx'
+import ToTextBlocks from '../../../../lib/models/transformations/ToTextBlocks.jsx'
 
 export const showModificationCheckbox = name => name !== ToMarkdown.name && name !== ToTextBlocks.name
 export const transformationToPageView = {}

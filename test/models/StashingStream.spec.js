@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 
-import StashingStream from '../../src/javascript/models/StashingStream';
-import TextItem from '../../src/javascript/models/TextItem.jsx';
+import StashingStream from '../../lib/models/StashingStream.jsx';
 
 describe('StashingStream', () => {
 
