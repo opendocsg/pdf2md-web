@@ -1,7 +1,12 @@
+// @flow
+
 import Transformation from './Transformation.jsx';
-import ParseResult from '../ParseResult.jsx';
 import LineItem from '../LineItem.jsx';
 import { REMOVED_ANNOTATION } from '../Annotation.jsx';
+
+/*::
+import ParseResult from '../ParseResult.jsx'
+*/
 
 // Abstract class for transformations producing LineItem(s) to be shown in the LineItemPageView
 export default class ToLineItemTransformation extends Transformation {
@@ -13,7 +18,7 @@ export default class ToLineItemTransformation extends Transformation {
         }
     }
 
-    completeTransform(parseResult:ParseResult) {
+    completeTransform(parseResult /*: ParseResult */) /*: ParseResult */ {
         // The usual cleanup
         parseResult.messages = [];
         parseResult.pages.forEach(page => {

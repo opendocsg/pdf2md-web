@@ -1,6 +1,11 @@
+// @flow
+
 import { Enum } from 'enumify';
 import { linesToText } from './WordType.jsx';
-import LineItemBlock from '../LineItemBlock.jsx';
+
+/*::
+import LineItemBlock from '../LineItemBlock.jsx'
+*/
 
 // An Markdown block
 export default class BlockType extends Enum {
@@ -12,83 +17,83 @@ BlockType.initEnum({
     H1: {
         headline: true,
         headlineLevel: 1,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return '# ' + linesToText(block.items, true);
         }
     },
     H2: {
         headline: true,
         headlineLevel: 2,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return '## ' + linesToText(block.items, true);
         }
     },
     H3: {
         headline: true,
         headlineLevel: 3,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return '### ' + linesToText(block.items, true);
         }
     },
     H4: {
         headline: true,
         headlineLevel: 4,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return '#### ' + linesToText(block.items, true);
         }
     },
     H5: {
         headline: true,
         headlineLevel: 5,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return '##### ' + linesToText(block.items, true);
         }
     },
     H6: {
         headline: true,
         headlineLevel: 6,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return '###### ' + linesToText(block.items, true);
         }
     },
     TOC: {
         mergeToBlock: true,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return linesToText(block.items, true);
         }
     },
     FOOTNOTES: {
         mergeToBlock: true,
         mergeFollowingNonTypedItems: true,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return linesToText(block.items, false);
         }
     },
     CODE: {
         mergeToBlock: true,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return '```\n' + linesToText(block.items, true) + '```'
         }
     },
     LIST: {
         mergeToBlock: false,
         mergeFollowingNonTypedItemsWithSmallDistance: true,
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return linesToText(block.items, false);
         }
     },
     PARAGRAPH: {
-        toText(block:LineItemBlock) {
+        toText(block /*: LineItemBlock */) /*: string */ {
             return linesToText(block.items, false);
         }
     }
 });
 
-export function isHeadline(type: BlockType) {
+export function isHeadline(type /*: BlockType */) /*: boolean */ {
     return type && type.name.length == 2 && type.name[0] === 'H'
 }
 
-export function blockToText(block: LineItemBlock) {
+export function blockToText(block /*: LineItemBlock */) /*: string */ {
     if (!block.type) {
         return linesToText(block.items, false);
     }

@@ -1,8 +1,14 @@
+// @flow
+
 import ToLineItemBlockTransformation from '../ToLineItemBlockTransformation.jsx';
 import ParseResult from '../../ParseResult.jsx';
 import { DETECTED_ANNOTATION } from '../../Annotation.jsx';
 import BlockType from '../../markdown/BlockType.jsx';
 import { minXFromBlocks } from '../../../util/page-item-functions.jsx';
+
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
 
 //Detect items which are code/quote blocks
 export default class DetectCodeQuoteBlocks extends ToLineItemBlockTransformation {
@@ -11,7 +17,7 @@ export default class DetectCodeQuoteBlocks extends ToLineItemBlockTransformation
         super("Detect Code/Quote Blocks");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */) /*? ParseResult */ {
         const {mostUsedHeight} = parseResult.globals;
         var foundCodeItems = 0;
         parseResult.pages.forEach(page => {

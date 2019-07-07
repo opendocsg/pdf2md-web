@@ -13,7 +13,7 @@ export default class ToTextItemTransformation extends Transformation {
         }
     }
 
-    completeTransform(parseResult:ParseResult) {
+    completeTransform(parseResult /*: ParseResult */) {
         // The usual cleanup
         parseResult.messages = [];
         parseResult.pages.forEach(page => {

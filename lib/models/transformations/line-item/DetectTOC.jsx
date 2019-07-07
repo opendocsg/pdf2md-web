@@ -1,3 +1,5 @@
+// @flow
+
 import ToLineItemTransformation from '../ToLineItemTransformation.jsx';
 import ParseResult from '../../ParseResult.jsx';
 import LineItem from '../../LineItem.jsx';
@@ -8,6 +10,10 @@ import BlockType from '../../markdown/BlockType.jsx';
 import { headlineByLevel } from '../../markdown/BlockType.jsx';
 import { isDigit, isNumber, wordMatch, hasOnly } from '../../../util/string-functions.jsx'
 
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
+
 //Detect table of contents pages plus linked headlines
 export default class DetectTOC extends ToLineItemTransformation {
 
@@ -15,7 +21,7 @@ export default class DetectTOC extends ToLineItemTransformation {
         super("Detect TOC");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */)  /*: ParseResult */ {
         const tocPages = [];
         const maxPagesToEvaluate = Math.min(20, parseResult.pages.length);
         const linkLeveler = new LinkLeveler();
@@ -291,7 +297,7 @@ class LinkLeveler {
         this.uniqueFonts = [];
     }
 
-    levelPageItems(tocLinks:TocLink[]) {
+    levelPageItems(tocLinks /*: TocLink[] */) {
         if (!this.levelByMethod) {
             const uniqueX = this.calculateUniqueX(tocLinks);
             if (uniqueX.length > 1) {
