@@ -1,8 +1,14 @@
+// @flow
+
 import ToLineItemBlockTransformation from '../ToLineItemBlockTransformation.jsx';
 import ParseResult from '../../ParseResult.jsx';
 import LineItemBlock from '../../LineItemBlock.jsx';
 import { DETECTED_ANNOTATION } from '../../Annotation.jsx';
 import { minXFromPageItems } from '../../../util/page-item-functions.jsx';
+
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
 
 // Gathers lines to blocks
 export default class GatherBlocks extends ToLineItemBlockTransformation {
@@ -11,7 +17,7 @@ export default class GatherBlocks extends ToLineItemBlockTransformation {
         super("Gather Blocks");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */) /*: ParseResult */ {
         const {mostUsedDistance} = parseResult.globals;
         var createdBlocks = 0;
         var lineItemCount = 0;

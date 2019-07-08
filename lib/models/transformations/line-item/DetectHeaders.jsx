@@ -1,9 +1,15 @@
+// @flow
+
 import ToLineItemTransformation from '../ToLineItemTransformation.jsx';
 import ParseResult from '../../ParseResult.jsx';
 import { DETECTED_ANNOTATION } from '../../Annotation.jsx';
 import BlockType from '../../markdown/BlockType.jsx';
 import { headlineByLevel } from '../../markdown/BlockType.jsx';
 import { isListItem } from '../../../util/string-functions.jsx';
+
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
 
 //Detect headlines based on heights
 export default class DetectHeaders extends ToLineItemTransformation {
@@ -12,7 +18,7 @@ export default class DetectHeaders extends ToLineItemTransformation {
         super("Detect Headers");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */)  /*: ParseResult */ {
         const {tocPages, headlineTypeToHeightRange, mostUsedHeight, mostUsedDistance, mostUsedFont, maxHeight} = parseResult.globals;
         const hasToc = tocPages.length > 0;
         var detectedHeaders = 0;

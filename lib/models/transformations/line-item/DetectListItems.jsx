@@ -1,3 +1,5 @@
+// @flow
+
 import ToLineItemTransformation from '../ToLineItemTransformation.jsx';
 import ParseResult from '../../ParseResult.jsx';
 import LineItem from '../../LineItem.jsx';
@@ -6,6 +8,10 @@ import { REMOVED_ANNOTATION, ADDED_ANNOTATION, DETECTED_ANNOTATION } from '../..
 import BlockType from '../../markdown/BlockType.jsx';
 import { isListItemCharacter, isNumberedListItem } from '../../../util/string-functions.jsx';
 
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
+
 //Detect items starting with -, •, etc...
 export default class DetectListItems extends ToLineItemTransformation {
 
@@ -13,7 +19,7 @@ export default class DetectListItems extends ToLineItemTransformation {
         super("Detect List Items");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */) /*: ParseResult */ {
         var foundListItems = 0;
         var foundNumberedItems = 0;
         parseResult.pages.forEach(page => {

@@ -1,5 +1,10 @@
-import TextItem from './TextItem.jsx';
+// @flow
+
 import { sortByX } from '../util/page-item-functions.jsx'
+
+/*::
+import TextItem from './TextItem.jsx'
+*/
 
 //Groups all text items which are on the same y line
 export default class TextItemLineGrouper {
@@ -9,12 +14,7 @@ export default class TextItemLineGrouper {
     }
 
     // returns a CombineResult
-    group(textItems: TextItem[]) {
-        return this.groupItemsByLine(textItems);
-    }
-
-
-    groupItemsByLine(textItems:TextItem[]) {
+    group(textItems /*: TextItem[] */) /*: TextItem[][] */ {
         const lines = [];
         var currentLine = [];
         textItems.forEach(item => {
@@ -26,9 +26,9 @@ export default class TextItemLineGrouper {
         });
         lines.push(currentLine);
 
-        lines.forEach(lineItems => {
+        lines.forEach(textItems => {
             // we can't trust order of occurence, esp. footnoteLinks like to come last
-            sortByX(lineItems);
+            sortByX(textItems);
         });
         return lines;
     }

@@ -1,4 +1,8 @@
-import ParseResult from '../ParseResult.jsx';
+// @flow
+
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
 
 // A transformation from an PdfPage to an PdfPage
 export default class Transformation {
@@ -15,12 +19,12 @@ export default class Transformation {
     }
 
     // Transform an incoming ParseResult into an outgoing ParseResult
-    transform(parseResult: ParseResult) { // eslint-disable-line no-unused-vars
+    transform(parseResult /*: ParseResult */) /*: ParseResult */ { // eslint-disable-line no-unused-vars
         throw new TypeError("Do not call abstract method foo from child.");
     }
 
     // Sometimes the transform() does only visualize a change. This methods then does the actual change.
-    completeTransform(parseResult: ParseResult) { // eslint-disable-line no-unused-vars
+    completeTransform(parseResult /*: ParseResult */) /*: ParseResult */ { // eslint-disable-line no-unused-vars
         parseResult.messages = [];
         return parseResult;
     }

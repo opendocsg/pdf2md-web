@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import ToLineItemTransformation from '../ToLineItemTransformation.jsx';
@@ -8,6 +10,9 @@ import LineConverter from '../../LineConverter.jsx';
 import BlockType from '../../markdown/BlockType.jsx';
 import { REMOVED_ANNOTATION, ADDED_ANNOTATION } from '../../Annotation.jsx';
 
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
 
 // gathers text items on the same y line to one line item
 export default class CompactLines extends ToLineItemTransformation {
@@ -16,7 +21,7 @@ export default class CompactLines extends ToLineItemTransformation {
         super("Compact To Lines");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */) /*: ParseResult */ {
         const {mostUsedDistance, fontToFormats} = parseResult.globals;
         const foundFootnotes = [];
         const foundFootnoteLinks = [];

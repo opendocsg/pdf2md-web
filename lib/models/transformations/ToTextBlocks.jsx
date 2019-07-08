@@ -8,7 +8,7 @@ export default class ToTextBlocks extends Transformation {
         super("To Text Blocks", "TextBlock");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */) {
         parseResult.pages.forEach(page => {
             const textItems = [];
             page.items.forEach(block => {

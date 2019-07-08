@@ -1,8 +1,14 @@
+// @flow
+
 import ToLineItemTransformation from '../ToLineItemTransformation.jsx';
 import ParseResult from '../../ParseResult.jsx';
 import LineItem from '../../LineItem.jsx';
 import StashingStream from '../../StashingStream.jsx';
 import { REMOVED_ANNOTATION, ADDED_ANNOTATION } from '../../Annotation.jsx';
+
+/*::
+import ParseResult from '../../ParseResult.jsx'
+*/
 
 // Converts vertical text to horizontal
 export default class VerticalToHorizontal extends ToLineItemTransformation {
@@ -11,7 +17,7 @@ export default class VerticalToHorizontal extends ToLineItemTransformation {
         super("Vertical to Horizontal Text");
     }
 
-    transform(parseResult:ParseResult) {
+    transform(parseResult /*: ParseResult */) /*: ParseResult */ {
         var foundVerticals = 0;
         parseResult.pages.forEach(page => {
             const stream = new VerticalsStream();
