@@ -1,7 +1,5 @@
 // @flow
 
-import React from 'react';
-
 import ToLineItemTransformation from '../ToLineItemTransformation.jsx';
 import ParseResult from '../../ParseResult.jsx';
 import LineItem from '../../LineItem.jsx';
@@ -60,12 +58,12 @@ export default class CompactLines extends ToLineItemTransformation {
                         linkCount++;
                     }
                     if (lineItem.parsedElements.footnoteLinks.length > 0) {
-                        const footnoteLinks = lineItem.parsedElements.footnoteLinks.map(footnoteLink => <span key={ footnoteLink }><a href={ "#Page " + (page.index + 1) }>{ footnoteLink }</a>,</span>);
+                        const footnoteLinks = lineItem.parsedElements.footnoteLinks.map(footnoteLink => ({ footnoteLink, page: page.index + 1 }));
                         foundFootnoteLinks.push.apply(foundFootnoteLinks, footnoteLinks);
                     }
                     if (lineItem.parsedElements.footnotes.length > 0) {
                         lineItem.type = BlockType.FOOTNOTES;
-                        const footnotes = lineItem.parsedElements.footnotes.map(footnote => <span key={ footnote }><a href={ "#Page " + (page.index + 1) }>{ footnote }</a>,</span>);
+                        const footnotes = lineItem.parsedElements.footnotes.map(footnote => ({ footnote, page: page.index + 1 }));
                         foundFootnotes.push.apply(foundFootnotes, footnotes);
                     }
                 });
@@ -79,8 +77,8 @@ export default class CompactLines extends ToLineItemTransformation {
             messages: [
                 'Detected ' + formattedWords + ' formatted words',
                 'Found ' + linkCount + ' links',
-                <span>Detected { foundFootnoteLinks.length } footnotes links: [{ foundFootnoteLinks }]</span>,
-                <span>Detected { foundFootnotes.length } footnotes: [{ foundFootnotes }]</span>,
+                'Detected ' +  foundFootnoteLinks.length + ' footnotes links',
+                'Detected ' +  foundFootnotes.length + ' footnotes',
             ]
         });
     }
