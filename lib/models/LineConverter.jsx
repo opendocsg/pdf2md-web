@@ -8,6 +8,11 @@ import { ParsedElements } from './PageItem.jsx';
 import { isNumber, isListItemCharacter } from '../util/string-functions.jsx'
 import { sortByX } from '../util/page-item-functions.jsx'
 
+/*::
+import TextItem from './TextItem.jsx'
+import LineItem from './LineItem.jsx'
+*/
+
 // Converts text items which have been grouped to a line (through TextItemLineGrouper) to a single LineItem doing inline transformations like
 //'whitespace removal', bold/emphasis annotation, link-detection, etc..
 export default class LineConverter {
@@ -17,7 +22,7 @@ export default class LineConverter {
     }
 
     // returns a CombineResult
-    compact(textItems /*: TextItem[] */) {
+    compact(textItems /*: TextItem[] */) /*: LineItem */ {
         // we can't trust order of occurence, esp. footnoteLinks like to come last
         sortByX(textItems);
 
