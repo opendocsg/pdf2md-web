@@ -12,7 +12,7 @@ import Collapse from 'react-bootstrap/lib/Collapse'
 import Panel from 'react-bootstrap/lib/Panel'
 import AutoAffix from 'react-overlays/lib/AutoAffix';
 
-import ParseResult from '../../../lib/models/ParseResult.jsx';
+import ParseResult from '../../../lib/models/ParseResult';
 
 import { transformationToPageView, showModificationCheckbox } from './debug/index.jsx'
 
