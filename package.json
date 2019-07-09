@@ -2,20 +2,19 @@
   "name": "@opendocsg/pdf2md",
   "version": "0.1.7",
   "description": "A PDF to Markdown Converter",
-  "main": "dist/pdf2md.js",
+  "main": "lib/pdf2md.js",
   "bin": {
-    "pdf2md": "dist/pdf2md-cli.js"
+    "pdf2md": "lib/pdf2md-cli.js"
   },
   "scripts": {
     "watch": "webpack -d --watch",
     "build": "NODE_ENV=browser webpack",
     "start": "NODE_ENV=browser webpack-dev-server",
-    "lint": "eslint src --ext .js --ext .jsx --cache",
-    "test": "NODE_ENV=cli mocha --compilers js:@babel/register test --recursive",
+    "lint": "eslint lib src --ext .js --ext .jsx --cache",
+    "test": "mocha test --recursive",
     "check": "npm run lint && npm run test",
     "release": "npm run lint && rm -rf build/* && NODE_ENV=production webpack -p",
-    "deploy": "npm run release && cp -r build/* docs/",
-    "prepare": "NODE_ENV=cli babel lib --copy-files --out-dir dist/ --keep-file-extension"
+    "deploy": "npm run release && cp -r build/* docs/"
   },
   "keywords": [
     "PDF",

@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+const { expect } = require('chai')
 
-import StashingStream from '../../lib/models/StashingStream.jsx';
+const StashingStream = require('../../lib/models/StashingStream')
 
 describe('StashingStream', () => {
 

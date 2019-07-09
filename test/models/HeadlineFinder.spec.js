@@ -1,7 +1,7 @@
-import { expect } from 'chai';
+const { expect } = require('chai')
 
-import HeadlineFinder from '../../lib/models/HeadlineFinder.jsx';
-import LineItem from '../../lib/models/LineItem.jsx';
+const HeadlineFinder = require('../../lib/models/HeadlineFinder')
+const LineItem = require('../../lib/models/LineItem')
 
 describe('HeadlineFinder', () => {
 

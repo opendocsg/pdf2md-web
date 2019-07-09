@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+const { expect } = require('chai')
 
-import { hasUpperCaseCharacterInMiddleOfWord, normalizedCharCodeArray, removeLeadingWhitespaces, removeTrailingWhitespaces, prefixAfterWhitespace, suffixBeforeWhitespace, charCodeArray, isListItem, isNumberedListItem, wordMatch } from '../../lib/util/string-functions.jsx'
+const { hasUpperCaseCharacterInMiddleOfWord, normalizedCharCodeArray, removeLeadingWhitespaces, removeTrailingWhitespaces, prefixAfterWhitespace, suffixBeforeWhitespace, charCodeArray, isListItem, isNumberedListItem, wordMatch } = require('../../lib/util/string-functions')
 
 describe('functions: hasUpperCaseCharacterInMiddleOfWord', () => {
 
