@@ -1,26 +1,26 @@
 import React from 'react'
 
 import TextItemPageView from './TextItemPageView.jsx'
-import CalculateGlobalStats from '../../../../lib/models/transformations/text-item/CalculateGlobalStats.jsx'
+import CalculateGlobalStats from '../../../../lib/models/transformations/text-item/CalculateGlobalStats'
 
 import LineItemPageView from './LineItemPageView.jsx'
-import CompactLines from '../../../../lib/models/transformations/line-item/CompactLines.jsx'
-import RemoveRepetitiveElements from '../../../../lib/models/transformations/line-item/RemoveRepetitiveElements.jsx'
-import VerticalToHorizontal from '../../../../lib/models/transformations/line-item/VerticalToHorizontal.jsx'
-import DetectTOC from '../../../../lib/models/transformations/line-item/DetectTOC.jsx'
-import DetectListItems from '../../../../lib/models/transformations/line-item/DetectListItems.jsx'
-import DetectHeaders from '../../../../lib/models/transformations/line-item/DetectHeaders.jsx'
+import * as CompactLines from '../../../../lib/models/transformations/line-item/CompactLines'
+import * as RemoveRepetitiveElements from '../../../../lib/models/transformations/line-item/RemoveRepetitiveElements'
+import * as VerticalToHorizontal from '../../../../lib/models/transformations/line-item/VerticalToHorizontal'
+import * as DetectTOC from '../../../../lib/models/transformations/line-item/DetectTOC'
+import * as DetectListItems from '../../../../lib/models/transformations/line-item/DetectListItems'
+import * as DetectHeaders from '../../../../lib/models/transformations/line-item/DetectHeaders'
 
 import LineItemBlockPageView from './LineItemBlockPageView.jsx'
-import GatherBlocks from '../../../../lib/models/transformations/line-item-block/GatherBlocks.jsx'
-import DetectCodeQuoteBlocks from '../../../../lib/models/transformations/line-item-block/DetectCodeQuoteBlocks.jsx'
-import DetectListLevels from '../../../../lib/models/transformations/line-item-block/DetectListLevels.jsx'
+import * as GatherBlocks from '../../../../lib/models/transformations/line-item-block/GatherBlocks'
+import * as DetectCodeQuoteBlocks from '../../../../lib/models/transformations/line-item-block/DetectCodeQuoteBlocks'
+import * as DetectListLevels from '../../../../lib/models/transformations/line-item-block/DetectListLevels'
 
 import MarkdownPageView from './MarkdownPageView.jsx'
-import ToMarkdown from '../../../../lib/models/transformations/ToMarkdown.jsx'
+import * as ToMarkdown from '../../../../lib/models/transformations/ToMarkdown'
 
 import TextPageView from './TextPageView.jsx'
-import ToTextBlocks from '../../../../lib/models/transformations/ToTextBlocks.jsx'
+import * as ToTextBlocks from '../../../../lib/models/transformations/ToTextBlocks'
 
 export const showModificationCheckbox = name => name !== ToMarkdown.name && name !== ToTextBlocks.name
 export const transformationToPageView = {}
