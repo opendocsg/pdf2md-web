@@ -1,5 +1,5 @@
 import { Enum } from 'enumify';
-import { makeTransformations } from '../../lib/util/transformations';
+import { makeTransformations } from '@opendocsg/pdf2md/lib/util/transformations';
 
 // Holds the state of the Application
 export default class AppState {

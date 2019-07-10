@@ -5,7 +5,7 @@ import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar'
 import ButtonGroup from 'react-bootstrap/lib/ButtonGroup'
 import Button from 'react-bootstrap/lib/Button'
 
-import { transform } from '../../../lib/util/transformations'
+import { transform } from '@opendocsg/pdf2md/lib/util/transformations'
 
 export default class ResultView extends React.Component {
 

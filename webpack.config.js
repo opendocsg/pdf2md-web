@@ -13,7 +13,8 @@ module.exports = {
     resolve: {
         modules: [
             path.resolve(JAVASCRIPT_DIR),
-            path.resolve('./node_modules')
+            path.resolve(NODEMODULES_DIR + '/@opendocsg/pdf2md/lib'),
+            path.resolve(NODEMODULES_DIR)
         ]
     },
     entry: {
@@ -29,7 +30,10 @@ module.exports = {
                 // Ask webpack to check: If this file ends with .js, then apply some transforms
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                include: [JAVASCRIPT_DIR, path.resolve(__dirname, 'lib')],
+                options: {
+                    configFile: path.resolve('babel.config.js')
+                },
+                include: [JAVASCRIPT_DIR, NODEMODULES_DIR + '/@opendocsg/pdf2md/lib'],
             },
             {
                 test: /\.css$/,
