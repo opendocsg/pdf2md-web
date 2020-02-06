@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@opendocsg/pdf2md": "^0.1.8",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "enumify": "^1.0.4",
     "file-saver": "^2.0.2",
     "pdfjs-dist": "^2.0.489",
